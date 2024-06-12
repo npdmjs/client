@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist",
+
+    "esModuleInterop": true,
+
+    "skipLibCheck": true,
+
+    "strict": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noPropertyAccessFromIndexSignature": true,
+
+    "jsx": "react"
+  },
+  "references": [
+    { "path": "./tsconfig.lib.cjs.json" },
+    { "path": "./tsconfig.lib.esm.json" },
+    { "path": "./tsconfig.test.json" },
+    { "path": "./tsconfig.scripts.json" }
+  ],
+}
