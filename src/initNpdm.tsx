@@ -44,10 +44,14 @@ export const initNpdm = <ModuleMap extends DynamicModuleMap>(
     ...moduleFederationOptions,
   });
 
-  const loadDynamicModule = <T extends ModuleName>(moduleName: T) => {
+  const loadDynamicModule = async <T extends ModuleName>(moduleName: T) => {
     const { exposedPath, packageSpec } = modules[moduleName];
     const componentPath = urlJoin(getPackageAlias(packageSpec), exposedPath);
-    return loadRemote<ExtractPropsType<ModuleMap[T]>>(componentPath);
+    const loadedModule = await loadRemote<ExtractPropsType<ModuleMap[T]>>(componentPath);
+    if (loadedModule === null) {
+      throw new Error(`Module Federation NPDM: Error loading module "${String(moduleName)}"`);
+    }
+    return loadedModule;
   };
 
   return { loadDynamicModule };

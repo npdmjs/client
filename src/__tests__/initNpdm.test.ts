@@ -94,7 +94,9 @@ describe('initNpdm', () => {
   });
 
   describe('loadDynamicModule', () => {
-    it('calls loadRemote() method with the correspondent import', () => {
+    it('calls loadRemote() method with the correspondent import', async () => {
+      const remoteModuleStub = {};
+      loadRemoteMock.mockResolvedValue(remoteModuleStub);
       const npdmOptions: NpdmOptions = {
         name: 'test-app-name',
         npdmUrl: 'https://server.space/npdm-api',
@@ -102,8 +104,21 @@ describe('initNpdm', () => {
       const { loadDynamicModule } = initNpdm(npdmOptions, {
         testModule,
       });
-      loadDynamicModule('testModule');
+      const actual = await loadDynamicModule('testModule');
       expect(loadRemoteMock).toHaveBeenCalledWith(`${testPackageAlias}/testModule`);
+      expect(actual).toBe(remoteModuleStub);
     });
+  });
+
+  it('throws error if no module returned by Module Federation', async () => {
+    loadRemoteMock.mockResolvedValue(null);
+    const npdmOptions: NpdmOptions = {
+      name: 'test-app-name',
+      npdmUrl: 'https://server.space/npdm-api',
+    };
+    const { loadDynamicModule } = initNpdm(npdmOptions, {
+      testModule,
+    });
+    expect(() => loadDynamicModule('testModule')).rejects.toThrow(/NPDM/);
   });
 });
