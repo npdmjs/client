@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.0.0](https://github.com/npdmjs/module-federation/compare/v1.0.0...v2.0.0) (2024-06-16)
+
+
+### ⚠ BREAKING CHANGES
+
+* Remote name should be unique for each package version. The method getRemoteName is proposed to create remote name from package name and its version.
+
+### Features
+
+* standardize remote name with the getRemoteName method ([38c3014](https://github.com/npdmjs/module-federation/commit/38c3014871d323c42fb0cc0295c5638314368003))
+
 ## 1.0.0 (2024-06-12)
 
 
