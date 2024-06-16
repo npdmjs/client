@@ -10,6 +10,7 @@ node_modules/
 .env.local
 
 dist
+coverage
 
 # IntelliJ based IDEs
 .idea
