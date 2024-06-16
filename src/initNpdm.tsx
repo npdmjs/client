@@ -1,6 +1,7 @@
 import { init, loadRemote } from '@module-federation/enhanced/runtime';
 import urlJoin from 'url-join';
 import type { DynamicModuleMap, DynamicPackageSpec, ExtractPropsType, NpdmOptions } from './types.js';
+import { getRemoteName } from './getRemoteName.js';
 
 
 const getPackageAlias = (spec: DynamicPackageSpec): string => {
@@ -30,7 +31,7 @@ export const initNpdm = <ModuleMap extends DynamicModuleMap>(
         packageSpec.packageVersion,
         packageSpec.remoteEntryRelativePath,
       ),
-      name: packageSpec.remoteName,
+      name: getRemoteName(packageSpec.packageName, packageSpec.packageVersion),
       entryGlobalName: packageSpec.remoteEntryGlobalName,
       type: packageSpec.remoteType,
       alias,

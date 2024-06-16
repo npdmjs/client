@@ -15,7 +15,6 @@ describe('initNpdm', () => {
     packageName: '@remote/test-package',
     packageVersion: '0.0.1',
     remoteEntryRelativePath: '/npdm/entry.js',
-    remoteName: 'test-package',
     remoteEntryGlobalName: 'remote-entry-global-name',
     remoteType: 'esm',
   };
@@ -45,7 +44,7 @@ describe('initNpdm', () => {
         name: 'test-app-name',
         remotes: [{
           entry: 'https://server.space/npdm-api/@remote/test-package/0.0.1/npdm/entry.js',
-          name: 'test-package',
+          name: 'remote__test_package__0_0_1',
           alias: testPackageAlias,
           entryGlobalName: 'remote-entry-global-name',
           type: 'esm',

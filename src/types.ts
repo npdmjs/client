@@ -19,8 +19,6 @@ export type DynamicPackageSpec = {
   packageName: string; // package name of current package
   /** Current version of the package from which module specification is taken */
   packageVersion: string; // default version of current package
-  /** Module Federation's remote name */
-  remoteName: string;
   /** The path to the remote entry file for the dynamic module */
   remoteEntryRelativePath: string; // where remote entry is placed
   /** Module Federation's entryGlobalName */

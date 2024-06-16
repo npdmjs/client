@@ -7,7 +7,6 @@ describe('connectModule', () => {
       packageName: '@remote/test-package',
       packageVersion: '0.0.1',
       remoteEntryRelativePath: '/npdm/entry.js',
-      remoteName: 'test-package',
     };
 
     const testModule: DynamicModule<number> = {
@@ -23,7 +22,6 @@ describe('connectModule', () => {
         packageName: '@remote/test-package',
         packageVersion: '0.0.2',
         remoteEntryRelativePath: '/npdm/entry.js',
-        remoteName: 'test-package',
       },
     });
   });

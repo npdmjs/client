@@ -12,7 +12,8 @@
     "noUnusedParameters": true,
     "noPropertyAccessFromIndexSignature": true,
 
-    "jsx": "react"
+    "jsx": "react",
+    "lib": ["ES2021"]
   },
   "references": [
     { "path": "./tsconfig.lib.cjs.json" },
