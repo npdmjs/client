@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.1.0](https://github.com/npdmjs/module-federation/compare/v2.0.0...v2.1.0) (2024-06-16)
+
+
+### Features
+
+* the loadDynamicModule method returns remote module or throws an error ([4e1f3cc](https://github.com/npdmjs/module-federation/commit/4e1f3cc5c8b8a5073848af8bc535828d62eb5286))
+
 ## [2.0.0](https://github.com/npdmjs/module-federation/compare/v1.0.0...v2.0.0) (2024-06-16)
 
 
